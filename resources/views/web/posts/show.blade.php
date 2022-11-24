@@ -53,6 +53,7 @@
                                                 @endcan
                                                 @can ('delete', $comment)
                                                     <a href="javascript:;" class="link-danger p-1 confirm-delete" data-bs-toggle="modal" data-bs-target="#confirm-delete-modal" data-url="{{ route('comments.destroy', $comment->id) }}">{{ __('Delete') }}</a>
+                                                    <x-modals.confirm-delete/>
                                                 @endcan
                                             </div>
                                             {{ $comment->comment }}
@@ -66,7 +67,4 @@
             </div>
         </div>
     </div>
-    @can ('delete', $comment)
-        <x-modals.confirm-delete/>
-    @endcan
 @endsection
